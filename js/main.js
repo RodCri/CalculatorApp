@@ -25,3 +25,47 @@ arrBtns.forEach((element, index) => {
       });
   });
 });
+
+const btns = document.querySelectorAll('.btn');
+const display = document.querySelector('.display--number');
+
+
+btns.forEach(boton => {
+  boton.addEventListener('click', () => {
+    const btnClick = boton.textContent;
+    console.log(display.textContent)
+    console.log(btnClick)
+
+    if (boton.id === "reset") {
+      display.textContent = "0";
+      display.classList.remove('error')
+      return;
+    }
+
+    if (boton.id === "del") {
+      if (display.textContent.length === 1 || display.textContent === "Syntax Error!") {
+        display.textContent = "0";
+        display.classList.remove('error')
+      } else {
+        display.textContent = display.textContent.slice(0, -1);
+      }
+      return;
+    }
+    if (boton.id === 'igual') {
+      try {
+        display.textContent = eval(display.textContent);
+      } catch (error) {
+        display.textContent = "Syntax Error!";
+        display.classList.add('error');
+      }
+      return;
+    }
+    if (display.textContent === "0" || display.textContent === "Syntax Error!") {
+      display.textContent = btnClick;
+      display.classList.remove('error')
+    } else {
+      display.textContent += btnClick;
+      display.classList.remove('error')
+    }
+  })
+})

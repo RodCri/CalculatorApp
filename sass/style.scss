@@ -1,46 +1,58 @@
 :root {
-  --main-background: hsl(222, 26%, 31%);
-  --toggle-background-keypad: hsl(223, 31%, 20%);
-  --screen-background: hsl(224, 36%, 15%);
-  --key-background: hsl(225, 21%, 49%);
-  --key-shadow: hsl(224, 28%, 35%);
-  --key-background-toggle: hsl(6, 63%, 50%);
-  --red-key-shadow: hsl(6, 70%, 34%);
-  --orange-key-background: hsl(30, 25%, 89%);
-  --grayish-orange-key-shadow: hsl(28, 16%, 65%);
-  --dark-grayish-blue: hsl(221, 14%, 31%);
-  --white: hsl(0, 0%, 100%);
-  --input-text: hsl(0, 0%, 100%);
+  --bg-back: hsl(222, 26%, 31%);
+  --text-head: hsl(0, 0%, 100%);
+  --bg-display: hsl(224, 35%, 15%);
+  --bg-display-numbers: hsl(228, 28%, 21%);
+  --text-number: hsl(224, 28%, 35%);
+  --shadom-number: hsl(26, 14%, 66%);
+  --bg-number: hsl(32, 26%, 89%);
+  --bg-number-hover: hsl(0, 0%, 100%);
+  --btn-del-reset: hsl(224, 21%, 50%);
+  --btn-del-reset-shadom: hsl(224, 29%, 36%);
+  --btn-del-reset-hover: hsl(224, 51%, 76%);
+  --btn-igual: hsl(6, 64%, 50%);
+  --btn-igual-shadom: hsl(6, 76%, 34%);
+  --btn-igual-hover: hsl(6, 93%, 67%);
+  --btn-igual-text: hsl(0, 0%, 100%);
+  --text-white: hsl(0, 0%, 100%);
 }
 
 .theme2 {
-  --main-background: hsl(0, 0%, 90%);
-  --toggle-background-keypad: hsl(0, 5%, 81%);
-  --screen-background: hsl(0, 0%, 93%);
-  --key-background: hsl(185, 42%, 37%);
-  --key-shadow: hsl(185, 58%, 25%);
-  --key-background-toggle: hsl(25, 98%, 40%);
-  --red-key-shadow: hsl(25, 99%, 27%);
-  --orange-key-background: hsl(45, 7%, 89%);
-  --grayish-orange-key-shadow: hsl(35, 11%, 61%);
-  --dark-grayish-blue: hsl(60, 10%, 19%);
-  --white: hsl(0, 0%, 100%);
-  --input-text: hsl(60, 10%, 19%);
+  --bg-back: hsl(0, 0%, 90%);
+  --text-head: hsl(60, 9%, 17%);
+  --bg-display: hsl(0, 0%, 93%);
+  --bg-display-numbers: hsl(0, 6%, 82%);
+  --text-number: hsl(60, 10%, 20%);
+  --shadom-number: hsl(33, 11%, 61%);
+  --bg-number: hsl(48, 9%, 89%);
+  --bg-number-hover: hsl(0, 0%, 100%);
+  --btn-del-reset: hsl(185, 41%, 37%);
+  --btn-del-reset-shadom: hsl(42, 10%, 61%);
+  --btn-del-reset-hover: hsl(185, 41%, 56%);
+  --btn-igual: hsl(25, 99%, 39%);
+  --btn-igual-shadom: hsl(25, 100%, 26%);
+  --btn-igual-hover: hsl(25, 100%, 61%);
+  --btn-igual-text: hsl(0, 0%, 100%);
+  --text-white: hsl(0, 0%, 100%);
 }
 
 .theme3 {
-  --main-background: hsl(268, 75%, 9%);
-  --toggle-background-keypad: hsl(268, 71%, 12%);
-  --screen-background: hsl(52, 100%, 62%);
-  --key-background: hsl(281, 89%, 26%);
-  --key-shadow: hsl(285, 91%, 52%);
-  --key-background-toggle: hsl(176, 100%, 44%);
-  --red-key-shadow: hsl(177, 92%, 70%);
-  --orange-key-background: hsl(268, 47%, 21%);
-  --grayish-orange-key-shadow: hsl(290, 70%, 36%);
-  --dark-grayish-blue: hsl(198, 20%, 13%);
-  --white: hsl(0, 0%, 100%);
-  --input-text: hsl(52, 100%, 62%);
+  --bg-back: hsl(268, 75%, 9%);
+  --text-head: hsl(51, 100%, 61%);
+  --bg-display: hsl(269, 74%, 12%);
+  --bg-display-numbers: hsl(269, 74%, 12%);
+  --text-number: hsl(50, 100%, 62%);
+  --shadom-number: hsl(289, 66%, 37%);
+  --bg-number: hsl(269, 48%, 20%);
+  --bg-number-hover: hsl(268, 54%, 44%);
+  --btn-del-reset: hsl(281, 89%, 26%);
+  --btn-del-reset-shadom: hsl(286, 91%, 52%);
+  --btn-del-reset-hover: hsl(280, 56%, 44%);
+  --btn-igual: hsl(176, 100%, 44%);
+  --btn-igual-shadom: hsl(176, 91%, 70%);
+  --btn-igual-hover: hsl(177, 100%, 79%);
+  --btn-igual-text: hsl(0, 0%, 0%);
+  --text-white: hsl(0, 0%, 100%);
 }
 
 * {
@@ -56,14 +68,22 @@ html {
 body {
   font-size: 3.2rem;
   font-family: 'League Spartan', sans-serif;
-  background-color: var(--main-background);
+  background-color: var(--bg-back);
+
+  @media(min-width:900px) {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
+
 .calculator {
-  width: 90%;
+  width: 100%;
   max-width: 550px;
-  margin: 40px auto;
-  padding: 10px;
+  margin: 0 auto;
+  padding: 10px 15px;
 
   .theme {
     width: 100%;
@@ -71,11 +91,11 @@ body {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    color: var(--input-text);
+    color: var(--text-head);
 
     &__name {
       font-size: 4rem;
-      color: var(--input-text);
+      color: var(--text-head);
     }
 
     &__options {
@@ -97,7 +117,7 @@ body {
         .tri-state-toggle {
           display: flex;
           justify-content: center;
-          background-color: var(--toggle-background-keypad);
+          background-color: var(--bg-display-numbers);
           border-radius: 50px;
           padding: 2px;
 
@@ -105,7 +125,7 @@ body {
             height: 20px;
             width: 20px;
             appearance: none;
-            background-color: black;
+            background-color: var(--btn-igual);
             border-radius: 50%;
             opacity: 0;
 
@@ -120,7 +140,107 @@ body {
           }
         }
       }
+    }
+  }
 
+  .display--number {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+    color: var(--text-head);
+    font-size: 3rem;
+    margin-bottom: 30px;
+    background-color: var(--bg-display);
+    padding: 0 30px;
+    cursor: default;
+
+    @media(min-width:900px) {
+      height: 130px;
+      font-size: 5rem;
+    }
+
+  }
+
+  .error {
+    border: 2px double #d13e2e;
+    color: #d13e2e;
+  }
+
+  .buttons {
+    width: 100%;
+    background-color: var(--bg-display-numbers);
+    display: grid;
+    grid-template-columns: repeat(4, minmax(62px, 1fr));
+    gap: 12px 13px;
+    padding: 24px;
+    border-radius: 10px;
+
+    @media(min-width:900px) {
+      gap: 26px;
+      padding: 32px;
+    }
+
+    .btn {
+      min-width: 60px;
+      height: 60px;
+      background-color: var(--bg-number);
+      color: var(--text-number);
+      border: none;
+      border-radius: 5px;
+      font-size: 2.2rem;
+      box-shadow: 0 5px 0 0 var(--shadom-number);
+      font-weight: 700;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--bg-number-hover);
+        transition: all .25s ease;
+      }
+
+      @media(min-width: 900px) {
+        font-size: 2.8rem;
+      }
+    }
+
+    #reset {
+      grid-column: span 2;
+      width: 100%;
+      background-color: var(--btn-del-reset);
+      color: var(--text-white);
+      box-shadow: 0 5px 0 0 var(--btn-del-reset-shadom);
+
+      &:hover {
+        background-color: var(--btn-del-reset-hover);
+        transition: all .3s ease;
+      }
+    }
+
+    #del {
+      background-color: var(--btn-del-reset);
+      color: var(--text-white);
+      box-shadow: 0 5px 0 0 var(--btn-del-reset-shadom);
+
+      &:hover {
+        background-color: var(--btn-del-reset-hover);
+        transition: all .3s ease;
+      }
+    }
+
+    #igual {
+      grid-column: span 2;
+      width: 100%;
+      background-color: var(--btn-igual);
+      color: var(--btn-igual-text);
+      box-shadow: 0 5px 0 0 var(--btn-igual-shadom);
+
+      &:hover {
+        background-color: var(--btn-igual-hover);
+        transition: all .3s ease;
+      }
     }
   }
 }
